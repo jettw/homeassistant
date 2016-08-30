@@ -62,3 +62,11 @@
       arg: /home
     - type: memory_free
     - type: processor_use
+
+- platform: nzbget
+  host: !secret nbzget_ip
+  port: 6789
+  monitored_variables:
+    - article_cache
+    - download_rate
+    - download_paused
