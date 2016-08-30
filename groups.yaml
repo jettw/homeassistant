@@ -1,0 +1,86 @@
+### GROUPS ###
+
+My Room:
+  - switch.aeotec_dsc11_smart_strip_switch_4_2
+  - switch.aeotec_dsc11_smart_strip_switch_4_3
+  - switch.aeotec_dsc11_smart_strip_switch_4_4
+  - switch.aeotec_dsc11_smart_strip_switch_4_5
+  - switch.my_computer
+  - binary_sensor.ecolink_doorwindow_sensor_sensor_2
+
+Work:
+  - zone.filmtools
+  - zone.moviola_burbank_office
+  - zone.moviola_burbank_office
+
+Bathroom Lights:
+  - light.jetts_bathroom_right
+  - light.jetts_bathroom_left
+  - light.hallway_light
+
+Multisensor:
+  - sensor.aeotec_zw100_multisensor_6_temperature_5
+  - sensor.aeotec_zw100_multisensor_6_relative_humidity_5
+  - sensor.aeotec_zw100_multisensor_6_luminance_5
+  - sensor.aeotec_zw100_multisensor_6_ultraviolet_5
+  - sensor.aeotec_zw100_multisensor_6_sensor_5
+  - sensor.aeotec_zw100_multisensor_6_burglar_5
+  - binary_sensor.aeotec_zw100_multisensor_6_sensor_5
+
+Steam:
+  - sensor.steam_76561197978202663
+  - sensor.steam_76561197964616535
+  - sensor.steam_76561197991271212
+
+Raspberry Pi:
+
+  - camera.server_room_camera
+  - sensor.cpu_use
+  - sensor.disk_use_home
+  - sensor.ram_free
+
+Server Room:
+  - light.server_room_1
+  - sensor.server_room_temperature
+  - sensor.server_room_humidity
+  - binary_sensor.server_room_motion_sensor
+
+
+
+Server Room 2:
+  view: yes
+  icon: mdi:server-network
+  entities:
+    - light.server_room_1
+    - group.nbzget
+
+NBZGet:
+  - sensor.nzbget_disk_free
+  - sensor.nzbget_download_paused
+  - sensor.nzbget_post_processing_paused
+  - sensor.nzbget_speed
+
+Commute:
+  - sensor.to_home
+  - sensor.to_work
+
+Kitchen:
+  - light.kitchen_1
+  - light.kitchen_2
+  - light.kitchen_3
+  - light.kitchen_4
+
+Weather & Date:
+  - sensor.date
+  - sensor.time
+  - sun.sun
+  - sensor.forecastio_summary
+  - sensor.forecastio_temperature
+  - sensor.forecastio_humidity
+  - sensor.forecastio_cloud_coverage
+# - sensor.forecastio_dew_point
+# - sensor.forecastio_pressure
+# - sensor.forecastio_precip
+# - sensor.forecastio_precip_probability
+  - sensor.forecastio_wind_speed
+# - sensor.forecastio_wind_bearing

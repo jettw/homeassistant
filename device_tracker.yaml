@@ -1,0 +1,10 @@
+- platform: ddwrt
+  host: !secret ddwrt
+  username: !secret ddwrt_username
+  password: !secret ddwrt_password
+  interval_seconds: 12
+  consider_home: 180
+  track_new_devices: no
+
+- platform: owntracks
+  max_gps_accuracy: 200

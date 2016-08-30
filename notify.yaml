@@ -1,0 +1,9 @@
+- platform: pushover
+  name: Home Assistant
+  api_key: !secret pushover_api_key
+  user_key: !secret pushover_user_key
+
+- platform: pushover
+  name: steam
+  api_key: !secret notify_steam_api_key
+  user_key: !secret pushover_user_key

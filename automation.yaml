@@ -1,0 +1,299 @@
+- alias: Turn on Hallways Lights And Bathroom Lights At Night BRIGHT
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_2
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '21:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: group.bathroom_lights
+      transition: 4
+      rgb_color: [255,255,255]
+      brightness: 255
+
+- alias: Turn on Hallways Lights And Bathroom Lights At Night LOW
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_2
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '21:00'
+      before: '02:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: group.bathroom_lights
+      transition: 4
+      rgb_color: [255,255,255]
+      brightness: 170
+
+- alias: Turn on Hallways Lights And Bathroom Lights At Night RED
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_2
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '02:00'
+      before: '06:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: group.bathroom_lights
+      transition: 4
+      rgb_color: [255,0,0]
+      brightness: 60
+
+
+- alias: Turn Off Lights if Door is closed
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_2
+      from: 'on'
+      to: 'off'
+
+
+  action:
+    service: light.turn_off
+    data:
+      entity_id: group.bathroom_lights
+      transition: 4
+
+- alias: Sunrise For Living Room Light
+
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "-00:10:00"
+
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.living_room
+      transition: 30
+
+- alias: Turn Off Lights at Sunset
+
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.living_room , light.kitchen_1 , light.kitchen_2 , light.kitchen_3 , light.kitchen_4 , light.server_room_1
+      transition: 900
+
+- alias: Turn on Kitchen Lights When Motion
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_5
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '06:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.kitchen_1 , light.kitchen_2 , light.kitchen_3 , light.kitchen_4
+      brightness: 100
+
+- alias: Turn Off Kitchen Lights
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_5
+      from: 'on'
+      to: 'off'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '06:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.kitchen_1 , light.kitchen_2 , light.kitchen_3 , light.kitchen_4
+      brightness: 15
+
+- alias: Sunrise For Kitchen Lights
+
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "-00:10:00"
+
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.kitchen_1 , light.kitchen_2 , light.kitchen_3 , light.kitchen_4
+      transition: 30
+
+- alias: Just got home from work
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ecolink_doorwindow_sensor_sensor_2
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '22:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.aeotec_dsc11_smart_strip_switch_4_2 , switch.aeotec_dsc11_smart_strip_switch_4_3 , switch.my_computer
+
+- alias: Turn off my room when I go to work
+
+  trigger:
+    - platform: state
+      entity_id: device_tracker.jett_jett_iphone
+      from: 'Away'
+      to: 'moviola_burbank_office'
+
+  condition:
+    - condition: time
+      after: '07:00'
+      before: '16:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: group.my_room
+
+- alias: Notify me when CHEESE logins on steam
+
+  trigger:
+    - platform: state
+      entity_id: !secret sensor_steam_cheese
+      from: 'Offline'
+      to: 'Online'
+
+  condition:
+    - condition: time
+      after: '10:00'
+      before: '16:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+
+  action:
+    service: notify.steam
+    data:
+      message: CHEESE is online!
+      title: Steam
+
+- alias: Notify me when JELLYDONUT logins on steam
+
+  trigger:
+    - platform: state
+      entity_id: !secret sensor_steam_jellydonut
+      from: 'Offline'
+      to: 'Online'
+
+  condition:
+    - condition: time
+      after: '10:00'
+      before: '16:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+
+  action:
+    service: notify.steam
+    data:
+      message: JELLYDONUT is online!
+      title: Steam
+
+- alias: 'Update Available Notifications'
+
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+
+
+  action:
+    service: notify.pushover
+    data:
+      message: 'Update for Home Assistant is available.'
+      title: Home Assistant
+
+- alias: Turn on Server Room Lights When Motion
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.server_room_motion_sensor
+      from: 'off'
+      to: 'on'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '06:00'
+
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.server_room_1
+      brightness: 255
+      transition: 6
+
+- alias: Turn Off Server Room Light
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.server_room_motion_sensor
+      from: 'on'
+      to: 'off'
+
+  condition:
+    - condition: time
+      after: '18:00'
+      before: '06:00'
+
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.server_room_1

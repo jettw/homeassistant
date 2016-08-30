@@ -1,0 +1,64 @@
+
+#Steam
+- platform: steam_online
+  api_key: !secret steam_api_key
+  accounts:
+    - !secret cheese #CHEESE
+    - !secret jellydonut #JELLYDONUT
+    - !secret zero #Zero
+
+#YR.io
+#- platform: yr
+#  monitored_conditions:
+#    - temperature
+#    - symbol
+#    - windSpeed
+#    - pressure
+#    - humidity
+
+#Time
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+
+#Commute to home
+- platform: google_travel_time
+  name: To Home
+  api_key: !secret google_api_key
+  origin: device_tracker.jett_jett_iphone
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: To Work
+  api_key: !secret google_api_key
+  origin: zone.home
+  destination: zone.moviola_burbank_office
+  options:
+    mode: driving
+
+- platform: forecast
+  api_key: !secret forcast_api_key
+  monitored_conditions:
+    - summary
+    - temperature
+    - wind_speed
+    - cloud_cover
+    - humidity
+
+- platform: dht
+  sensor: DHT11
+  pin: 4
+  name: Server Room
+  monitored_conditions:
+    - temperature
+    - humidity
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: processor_use

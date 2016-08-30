@@ -1,0 +1,145 @@
+### Customize ###
+### For Timezones  : http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+### For Icons:     : https://materialdesignicons.com/
+
+    climate.living_room:
+      friendly_name: 'Nest'
+      entity_picture: /local/nest2.png
+    switch.__switch_3:
+      hidden: true
+    device_tracker.jett_jett_iphone:
+      friendly_name: Jett
+
+### My Room ###
+    binary_sensor.ecolink_doorwindow_sensor_sensor_2:
+        friendly_name: 'Jetts Door'
+    sensor.ecolink_doorwindow_sensor_alarm_level_2:
+        hidden: true
+    sensor.ecolink_doorwindow_sensor_alarm_type_2:
+        hidden: true
+    sensor.ecolink_doorwindow_sensor_burglar_2:
+        hidden: true
+    sensor.ecolink_doorwindow_sensor_sourcenodeid_2:
+        hidden: true
+    switch.aeotec_dsc11_smart_strip_switch_4_2:
+        friendly_name: 'Desk Fan'
+        icon: mdi:fan
+    switch.aeotec_dsc11_smart_strip_switch_4_3:
+        friendly_name: 'Ikea Lamp'
+        icon: mdi:lightbulb
+    switch.aeotec_dsc11_smart_strip_switch_4_4:
+        friendly_name: 'Air Purifier'
+        icon: mdi:fan
+    switch.aeotec_dsc11_smart_strip_switch_4_5:
+        friendly_name: 'Amazon Echo'
+        icon: mdi:amazon
+    binary_sensor.aeotec_zw100_multisensor_6_sensor_5:
+        friendly_name: 'Multi Sensor'
+    media_player.pops_room:
+        friendly_name: 'Chromecast'
+    switch.aeotec_dsc11_smart_strip_switch_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_previous_reading_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_previous_reading_4_2:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_previous_reading_4_3:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_previous_reading_4_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_previous_reading_4_5:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_energy_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_energy_4_2:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_energy_4_3:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_energy_4_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_energy_4_5:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_power_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_power_4_2:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_power_4_3:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_power_4_4:
+        hidden: true
+    sensor.aeotec_dsc11_smart_strip_power_4_5:
+        hidden: true
+
+
+
+### MuiltSensor ###
+    sensor.aeotec_zw100_multisensor_6_temperature_5:
+        friendly_name: Temperature
+    sensor.aeotec_zw100_multisensor_6_relative_humidity_5:
+        friendly_name: Humidity
+        icon: mdi:water
+    sensor.aeotec_zw100_multisensor_6_luminance_5:
+        friendly_name: Luminance
+        icon: mdi:weather-sunny
+    sensor.aeotec_zw100_multisensor_6_ultraviolet_5:
+        friendly_name: Ultraviolet
+        icon: mdi:sunglasses
+    sensor.aeotec_zw100_multisensor_6_sensor_5:
+        friendly_name: Sensor
+    sensor.aeotec_zw100_multisensor_6_alarm_level_5:
+        hidden: true
+    sensor.aeotec_zw100_multisensor_6_alarm_type_5:
+        hidden: true
+    sensor.aeotec_zw100_multisensor_6_sourcenodeid_5:
+        hidden: true
+    sensor.aeotec_zw100_multisensor_6_burglar_5:
+        friendly_name: Motion sensor
+        icon: mdi:run
+    sensor.aeotec_zw100_multisensor_6_sensor:
+        hidden: true
+
+### NBZGet ###
+    sensor.nzbget_disk_free:
+        icon: mdi:harddisk
+    sensor.nzbget_download_paused:
+        icon : mdi:pause
+    sensor.nzbget_post_processing_paused:
+        hidden: true
+    sensor.nzbget_speed:
+        icon : mdi:download
+    sensor.nzbget_queue_size:
+        hidden: true
+    sensor.nzbget_article_cache:
+        hidden: true
+
+### Google Maps ###
+    sensor.to_home:
+      icon: mdi:car
+    sensor.to_work:
+      icon: mdi:car
+
+### Server Room ###
+    sensor.server_room_temperature:
+      friendly_name: Temperature
+    sensor.server_room_humidity:
+      friendly_name: Humidity
+      icon: mdi:water
+    binary_sensor.server_room_motion_sensor:
+      friendly_name: Motion Sensor
+    light.server_room_1:
+      friendly_name: Server Room Light
+
+### Forcast.io ###
+    sensor.forecastio_summary:
+      friendly_name: Summary
+    sensor.forecastio_humidity:
+      friendly_name: Humidity
+      icon: mdi:water
+    sensor.forecastio_temperature:
+      friendly_name: Temperature
+    sensor.forecastio_cloud_coverage:
+      friendly_name: Cloud Coverage
+      icon: mdi:cloud
+    sensor.forecastio_wind_speed:
+      friendly_name: Wind Speed
+      icon: mdi:weather-windy
