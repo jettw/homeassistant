@@ -182,7 +182,7 @@
   trigger:
     - platform: state
       entity_id: device_tracker.jett_jett_iphone
-      from: 'Away'
+      from: 'not_home'
       to: 'moviola_burbank_office'
 
   condition:
