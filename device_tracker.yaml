@@ -1,5 +1,5 @@
 - platform: ddwrt
-  host: !secret ddwrt
+  host: !secret ddwrt_ip
   username: !secret ddwrt_username
   password: !secret ddwrt_password
   interval_seconds: 12

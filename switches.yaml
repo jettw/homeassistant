@@ -1,10 +1,10 @@
 - platform: wake_on_lan
   mac_address: !secret mac_my_computer
   name: "My Computer"
-  host: "10.0.0.80"
+  host: !secret my_computer_ip
 
 #testing
 - platform: wake_on_lan
   mac_address: !secret mac_amazon_dash_button
   name: "Amazon Button"
-  host: "10.0.0.94"
+  host: !secret amazon_dash_ip
