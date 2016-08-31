@@ -1,4 +1,4 @@
-<a href="https://home-assistant.io"> <img src="https://github.com/jettw/homeassistant/blob/master/ha_logo.svg" align="right" /> </a>
+<a href="https://home-assistant.io"> <img src="https://github.com/jettw/homeassistant/blob/master/ha_logo.svg" width="100%" height="144" align="right" /> </a>
 # Home Assistant
 Home Assistant Configuration
 
