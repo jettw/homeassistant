@@ -35,6 +35,9 @@ nest:
   username: !secret nest_username
   password: !secret nest_password
 
+ifttt:
+  key: !secret ifttt_api_key
+
 climate:
   platform: nest
 
@@ -49,13 +52,9 @@ light:
   allow_unreachable: true
 
 automation: !include automation.yaml
-
 device_tracker: !include device_tracker.yaml
-
 switch: !include switches.yaml
-
 notify: !include notify.yaml
-
 group: !include groups.yaml
 
 mqtt:
@@ -66,9 +65,7 @@ mqtt:
   password: !secret mqtt_password
 
 sensor: !include sensors.yaml
-
 zone: !include zones.yaml
-
 camera: !include cameras.yaml
 
 #GPIO sensor

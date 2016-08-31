@@ -1,4 +1,4 @@
-<a href="https://home-assistant.io"> <img src="https://home-assistant.io/images/supported_brands/home-assistant.png" align="right" /> </a>
+<a href="https://home-assistant.io"> <img src="ha_logo.svg" align="right" /> </a>
 # Home Assistant
 Home Assistant Configuration
 
