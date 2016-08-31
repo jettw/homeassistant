@@ -183,7 +183,7 @@
     - platform: state
       entity_id: device_tracker.jett_jett_iphone
       from: 'not_home'
-      to: 'moviola_burbank_office'
+      to: 'Burbank Office'
 
   condition:
     - condition: time
