@@ -10,8 +10,8 @@ My Room:
 
 Work:
   - zone.filmtools
-  - zone.moviola_burbank_office
-  - zone.moviola_hollywood_office
+  - zone.burbank_office
+  - zone.hollywood_office
 
 Bathroom Lights:
   - light.jetts_bathroom_right
@@ -26,6 +26,11 @@ Multisensor:
   - sensor.aeotec_zw100_multisensor_6_sensor_5
   - sensor.aeotec_zw100_multisensor_6_burglar_5
   - binary_sensor.aeotec_zw100_multisensor_6_sensor_5
+
+Users:
+  - !secret tracker_j
+  - !secret tracker_p
+  - !secret tracker_m
 
 Steam:
   - !secret sensor_steam_jellydonut
