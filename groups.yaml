@@ -56,9 +56,10 @@ Server Room 2:
   view: yes
   icon: mdi:server-network
   entities:
-    - light.server_room_1
+    - group.server_room
     - group.nbzget
-
+    - group.raspberry_pi
+    
 NBZGet:
   - sensor.nzbget_disk_free
   - sensor.nzbget_download_paused
