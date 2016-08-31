@@ -1,4 +1,5 @@
-![](ha_logo.svg?raw=true)# Home Assistant
+<a href="https://home-assistant.io"> <img src="https://home-assistant.io/images/supported_brands/home-assistant.png" align="right" /> </a>
+# Home Assistant
 Home Assistant Configuration
 
 ## Devices
