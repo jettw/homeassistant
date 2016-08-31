@@ -35,7 +35,7 @@
   name: To Work
   api_key: !secret google_api_key
   origin: zone.home
-  destination: zone.moviola_burbank_office
+  destination: zone.burbank_office
   options:
     mode: driving
 
