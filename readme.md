@@ -1,4 +1,4 @@
-# ![pageres](ha_logo.svg)
+<a href="https://home-assistant.io"> <img src="https://github.com/jettw/homeassistant/blob/master/ha_logo.svg" align="right" /> </a>
 # Home Assistant
 Home Assistant Configuration
 
