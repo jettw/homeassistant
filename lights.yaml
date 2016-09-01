@@ -1,0 +1,2 @@
+- platform: lifx
+  allow_unreachable: true
