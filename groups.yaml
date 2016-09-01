@@ -1,5 +1,6 @@
 ### GROUPS ###
 
+
 My Room:
   - switch.aeotec_dsc11_smart_strip_switch_4_2
   - switch.aeotec_dsc11_smart_strip_switch_4_3
@@ -50,21 +51,30 @@ Server Room:
   - sensor.server_room_humidity
   - binary_sensor.server_room_motion_sensor
 
-
-
-Server Room 2:
+Server Room Tab:
   view: yes
   icon: mdi:server-network
   entities:
     - group.server_room
     - group.nbzget
     - group.raspberry_pi
-    
+
+All Lights:
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+    - light.kitchen_1
+    - light.kitchen_2
+    - light.kitchen_3
+    - light.kitchen_4
+    - light.jetts_bathroom_right
+    - light.jetts_bathroom_left
+    - light.hallway_light
+    - light.server_room_1
+
 NBZGet:
-  - sensor.nzbget_disk_free
-  - sensor.nzbget_download_paused
-  - sensor.nzbget_post_processing_paused
   - sensor.nzbget_speed
+  - sensor.nzbget_download_paused
 
 Commute:
   - sensor.to_home
