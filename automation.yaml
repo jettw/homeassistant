@@ -278,7 +278,7 @@
     data:
       entity_id: light.server_room_1
       brightness: 255
-      transition: 6
+
 
 - alias: Turn Off Server Room Light
 
