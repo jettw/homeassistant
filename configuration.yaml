@@ -7,29 +7,9 @@ homeassistant:
   customize: !include customize.yaml
   unit_system: imperial
   elevation: 23
-# View all events in a logbook
-logbook:
-
-# Enables the frontend
-frontend:
 
 http:
   api_password: !secret http_password
-
-# Discover some devices automatically
-discovery:
-
-# Checks for available updates
-updater:
-
-# Track the sun
-sun:
-
-# Allows you to issue voice commands from the frontend
-conversation:
-
-# Enables support for tracking state changes over time.
-history:
 
 nest:
   username: !secret nest_username
@@ -46,17 +26,6 @@ zwave:
   usb_path: /dev/ttyACM0
   config_path: /srv/hass/hass_venv/lib/python3.4/site-packages/libopenzwave-0.3.1-py3.4-linux-armv7l.egg/config
 
-# Enables Lifx Light Bulbs
-light:
-  platform: lifx
-  allow_unreachable: true
-
-automation: !include automation.yaml
-device_tracker: !include device_tracker.yaml
-switch: !include switches.yaml
-notify: !include notify.yaml
-group: !include groups.yaml
-
 mqtt:
   broker: !secret localhost
   port: 1883
@@ -64,9 +33,6 @@ mqtt:
   username: !secret mqtt_user
   password: !secret mqtt_password
 
-sensor: !include sensors.yaml
-zone: !include zones.yaml
-camera: !include cameras.yaml
 
 #GPIO sensor
 #give correct permissions with "sudo adduser hass gpio"
@@ -77,3 +43,34 @@ binary_sensor:
   pull_mode: "UP"
   bouncetime: 50
   invert_logic: false
+
+####################################################
+#                                                  #
+#                     Includes                     #
+#                                                  #
+####################################################
+
+sensor: !include sensors.yaml
+zone: !include zones.yaml
+camera: !include cameras.yaml
+automation: !include automation.yaml
+device_tracker: !include device_tracker.yaml
+switch: !include switches.yaml
+notify: !include notify.yaml
+group: !include groups.yaml
+light: !include lights.yaml
+
+####################################################
+#                                                  #
+#                     Enables                      #
+#                                                  #
+####################################################
+
+logbook:
+logger:
+frontend:
+history:
+discovery:
+sun:
+conversation:
+updater:
