@@ -67,6 +67,5 @@
   host: !secret nbzget_ip
   port: 6789
   monitored_variables:
-    - article_cache
     - download_rate
     - download_paused
