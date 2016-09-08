@@ -297,3 +297,48 @@
     service: light.turn_off
     data:
       entity_id: light.server_room_1
+
+
+- alias: Turn off my room when I go to filmtools
+
+  trigger:
+    - platform: state
+      entity_id: device_tracker.jett_jett_iphone
+      from: 'not_home'
+      to: 'Filmtools'
+
+  condition:
+    - condition: time
+      after: '07:00'
+      before: '16:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: group.my_room
+
+- alias: Turn off my room when I go to filmtools to work
+
+  trigger:
+    - platform: state
+      entity_id: device_tracker.jett_jett_iphone
+      from: 'Filmtools'
+      to: 'Burbank Office'
+
+  condition:
+    - condition: time
+      after: '07:00'
+      before: '16:00'
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: group.my_room
