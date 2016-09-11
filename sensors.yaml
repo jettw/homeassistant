@@ -69,3 +69,6 @@
   monitored_variables:
     - download_rate
     - download_paused
+
+- platform: pi_hole
+  host: 10.0.0.69
